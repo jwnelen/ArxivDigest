@@ -28,7 +28,7 @@ Staying up to date on [arXiv](https://arxiv.org) papers can take a considerable 
 This repository offers a method to curate a daily digest, sorted by relevance, using large language models. These models are conditioned based on your personal research interests, which are described in natural language. 
 
 * You modify the configuration file `config.yaml` with an arXiv Subject, some set of Categories, and a natural language statement about the type of papers you are interested in.  
-* The code pulls all the abstracts for papers in those categories and ranks how relevant they are to your interest on a scale of 1-10 using `gpt-3.5-turbo`.
+* The code pulls all the abstracts for papers in those categories and ranks how relevant they are to your interest on a scale of 1-10 using `gpt-3.5-turbo-16k`.
 * The code then emits an HTML digest listing all the relevant papers, and optionally emails it to you using [SendGrid](https://sendgrid.com). You will need to have a SendGrid account with an API key for this functionality to work.  
 
 ### Testing it out with Hugging Face:
@@ -83,7 +83,12 @@ To locally run the same UI as the Huggign Face space:
  
 1. Install the requirements in `src/requirements.txt` as well as `gradio`.
 2. Run `python src/app.py` and go to the local URL. From there you will be able to preview the papers from today, as well as the generated digests.
+3. If you want to use a `.env` file for your secrets, you can copy `.env.template` to `.env` and then set the environment variables in `.env`.
+- Note: These file may be hidden by default in some operating systems due to the dot prefix.
+- The .env file is one of the files in .gitignore, so git does not track it and it will not be uploaded to the repository.
+- Do not edit the original `.env.template` with your keys or your email address, since `.template.env` is tracked by git and editing it might cause you to commit your secrets.
 
+> **WARNING:** Do not edit and commit your `.env.template` with your personal keys or email address! Doing so may expose these to the world!
 
 ## ✅ Roadmap
 
