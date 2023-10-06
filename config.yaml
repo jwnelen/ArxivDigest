@@ -3,15 +3,20 @@ topic: "Computer Science"
 # An empty list here will include all categories in a topic
 # Use the natural language names of the topics, found here: https://arxiv.org
 # Including more categories will result in more calls to the large language model
-categories: ["Artificial Intelligence", "Computation and Language", "Human-Computer Interaction"]
+categories:
+  [
+    "Artificial Intelligence",
+    "Computation and Language",
+    "Human-Computer Interaction",
+  ]
 
 # Relevance score threshold. abstracts that receive a score less than this from the large language model
 # will have their papers filtered out.
 #
 # Must be within 1-10
-threshold: 7
+threshold: 8
 
-# A natural language statement that the large language model will use to judge which papers are relevant 
+# A natural language statement that the large language model will use to judge which papers are relevant
 #
 # For example:
 #     "I am interested in complexity theory papers that establish upper bounds"
@@ -21,8 +26,8 @@ threshold: 7
 # This can be empty, which just return a full list of papers with no judgement or filtering,
 # in whatever order arXiv responds with.
 interest: |
-  1. Large language model pretraining and finetunings
-  2. New models or datasets for large language model pretraining
-  3. I also care about the social and ethical aspects of large language models
-  4. I'm also interested in productionizing large language models
+  1. Explainability methods in Large language models
+  2. Special Finetune methods for LLMs that have a focus on explainability
+  3. The social and ethical aspects of LLMs
+  4. Applications of LLMs in the social sciences
   5. Not interested in paper focus on specific languages, e.g., Arabic, Chinese, etc.
